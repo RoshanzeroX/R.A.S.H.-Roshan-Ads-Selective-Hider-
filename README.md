@@ -29,6 +29,8 @@ RoshanAdsHider (RASH) is a lightweight, high-performance visual element blocker 
 2.  **Add Script:** Click the **Raw** button on the `RoshanAdsHider.user.js` file in this repository.
 3.  **Confirm:** Tampermonkey will open a new tab. Click **Install**.
 
+### 🚀 Installation / วิธีติดตั้ง
+[คลิกที่นี่เพื่อติดตั้ง R.A.S.H.](https://github.com/RoshanzeroX/R.A.S.H.-Roshan-Ads-Selective-Hider-/raw/refs/heads/main/RoshanAdsHider.user.js)
 ---
 
 ## 🛠️ How to Use / วิธีใช้งาน
