@@ -1,14 +1,17 @@
 // ==UserScript==
-// @name        R.A.S.H. (Roshan Ads Selective Hider)
+// @name         R.A.S.H. (Roshan Ads Selective Hider)
 // @namespace    http://tampermonkey.net/
-// @version      9.1
-// @description  Stable Version: 9.1 Elevate your browsing with RASH. A high-performance visual element blocker featuring a Liquid Glass UI. Effortless control, persistent rules, and a cleaner web—exactly how you want it.
+// @version      9.2
+// @description  Stable Version: 9.2 Elevate your browsing with RASH. A high-performance visual element blocker featuring a Liquid Glass UI. Effortless control, persistent rules, and a cleaner web—exactly how you want it.
 // @match        *://*/*
 // @grant        none
 // ==/UserScript==
 
 (function () {
     'use strict';
+
+    // ป้องกันไม่ให้รันซ้ำถ้าตรวจเจอว่ามีปุ่มเดิมอยู่แล้ว
+    if (document.getElementById("rash-toggle-btn")) return;
 
     const STORAGE_KEY = "light_block_rules";
     let pickerMode = false;
@@ -99,6 +102,7 @@
     // FIXED TOGGLE BUTTON
     // ======================
     const toggle = document.createElement("div");
+    toggle.id = "rash-toggle-btn"; // ใส่ ID เพื่อใช้ตรวจสอบการซ้ำซ้อน
     Object.assign(toggle.style, {
         position: "fixed", top: "20px", right: "20px",
         width: "22px", height: "22px",
@@ -209,7 +213,6 @@
             updateStyles();
         }
     }, true);
-
 
     document.addEventListener("keydown", e => {
         if (e.altKey && e.key.toLowerCase() === "z") {
